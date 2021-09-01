@@ -26,6 +26,15 @@ DEP_CFLAGS="-I${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/include"
 DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
 
 ./configure \
+  --disable-everything \
+  --disable-network \
+  --disable-doc \
+  --disable-debug \
+  --disable-avdevice \
+  --disable-swscale \
+  --disable-avfilter \
+  --disable-autodetect \
+  --enable-small \
   --prefix=${BUILD_DIR_FFMPEG}/${ANDROID_ABI} \
   --enable-cross-compile \
   --target-os=android \
@@ -43,6 +52,11 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --extra-ldflags="$DEP_LD_FLAGS" \
   --enable-shared \
   --disable-static \
+  --enable-avresample \
+  --enable-decoder=aac*,ac3* \
+  --enable-demuxer=mov \
+  --enable-muxer=mp3 \
+  --enable-protocol=file \
   --pkg-config=${PKG_CONFIG_EXECUTABLE} \
   ${EXTRA_BUILD_CONFIGURATION_FLAGS} \
   $ADDITIONAL_COMPONENTS || exit 1
