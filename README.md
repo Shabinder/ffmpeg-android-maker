@@ -7,6 +7,12 @@
 
 <img src="https://github.com/Javernaut/ffmpeg-android-maker/blob/master/images/output_structure.png" width="280" align="right">
 
+## Current Spotiflyer Edition Build Command:
+
+```
+./ffmpeg-android-maker.sh --android-api-level=21 -lame
+```
+
 Here is a script that downloads the source code of [FFmpeg](https://www.ffmpeg.org) library and assembles it for Android. The script produces shared libraries (\*.so files) as well as header files (\*.h files). The output structure is represented in the image.
 
 The script also produces `ffmpeg` and `ffprobe` executables that can be used in Android's terminal directly or can even be embedded into an Android app. They can be found in `build` directory after the successful build.
