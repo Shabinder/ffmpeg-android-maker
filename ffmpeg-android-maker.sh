@@ -34,7 +34,7 @@ export BUILD_DIR_EXTERNAL=$BUILD_DIR/external
 function prepareOutput() {
   OUTPUT_LIB=${OUTPUT_DIR}/lib/${ANDROID_ABI}
   mkdir -p ${OUTPUT_LIB}
-  cp ${BUILD_DIR_FFMPEG}/${ANDROID_ABI}/lib/*.so ${OUTPUT_LIB}
+  cp ${BUILD_DIR_FFMPEG}/${ANDROID_ABI}/lib/*.a ${OUTPUT_LIB}
 
   OUTPUT_HEADERS=${OUTPUT_DIR}/include/${ANDROID_ABI}
   mkdir -p ${OUTPUT_HEADERS}
@@ -118,7 +118,7 @@ do
     cd ${BASE_DIR}
   done
 
-  checkTextRelocations || exit 1
+#  checkTextRelocations || exit 1
 
   prepareOutput
 done
