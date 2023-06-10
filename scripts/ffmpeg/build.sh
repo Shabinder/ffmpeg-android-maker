@@ -59,6 +59,14 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --disable-vulkan \
   --enable-static \
   --disable-shared \
+  --enable-filter=aresample \
+  --enable-decoder=aac*,ac3* \
+  --enable-encoder=libmp3lame \
+  --enable-demuxer=mov \
+  --enable-muxer=mp3 \
+  --enable-protocol=file \
+  --enable-static \
+  --disable-shared \
   --pkg-config=${PKG_CONFIG_EXECUTABLE} \
   ${EXTRA_BUILD_CONFIGURATION_FLAGS} \
   $ADDITIONAL_COMPONENTS || exit 1
