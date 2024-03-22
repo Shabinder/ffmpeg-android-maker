@@ -65,6 +65,7 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --enable-demuxer=mov \
   --enable-muxer=mp3 \
   --enable-protocol=file \
+  --enable-openssl \
   --enable-static \
   --disable-shared \
   --pkg-config=${PKG_CONFIG_EXECUTABLE} \
