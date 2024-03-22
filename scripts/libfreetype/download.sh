@@ -2,8 +2,8 @@
 
 source ${SCRIPTS_DIR}/common-functions.sh
 
-FREETYPE_VERSION=2.13.0
+FREETYPE_VERSION=2.13.2
 
 downloadTarArchive \
   "libfreetype" \
-  "https://nav.dl.sourceforge.net/project/freetype/freetype2/${FREETYPE_VERSION}/freetype-${FREETYPE_VERSION}.tar.gz"
+  "https://download.savannah.gnu.org/releases/freetype/freetype-${FREETYPE_VERSION}.tar.gz"
