@@ -52,8 +52,8 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --enable-filter=aresample \
   --enable-decoder=aac*,ac3* \
   --enable-encoder=libmp3lame \
-  --enable-demuxer=mov \
-  --enable-muxer=mp3 \
+  --enable-demuxer=mov,mpegts,aac,mp3 \
+  --enable-muxer=mp3,mpegts,aac \
   --enable-protocol=file \
   --disable-vulkan \
   --enable-static \
@@ -63,8 +63,8 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --enable-encoder=libmp3lame \
   --enable-demuxer=mov \
   --enable-muxer=mp3 \
-  --enable-protocol=file \
-  --enable-protocol=https \
+  --enable-protocol=file,hls,pipe,https \
+  --enable-bsf=aac_adtstoasc \
   --enable-static \
   --enable-mbedtls \
   --disable-shared \
