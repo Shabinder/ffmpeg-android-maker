@@ -13,17 +13,17 @@ include("$ENV{ANDROID_NDK_HOME}/build/cmake/android.toolchain.cmake")
 # For armeabi-v7a and arm64-v8a it is ok to use GNU assembler
 # When ANDROID_ABI is x86 or x86_64,
 # then CMAKE_ASM_NASM_COMPILER variable will point to the yasm compiler (it is set by android.toolchain.cmake)
-if(DEFINED CMAKE_ASM_NASM_COMPILER)
+if (DEFINED CMAKE_ASM_NASM_COMPILER)
   set(AS_EXECUTABLE ${CMAKE_ASM_NASM_COMPILER})
-else()
+else ()
   set(AS_EXECUTABLE ${ANDROID_ASM_COMPILER})
-endif()
+endif ()
 
 # AV1 Codec Library doesn't recognise 'i686' as CMAKE_SYSTEM_PROCESSOR
 # We have to specify x86 in AOM_TARGET_CPU variable instead
-if("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "i686")
+if ("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "i686")
   set(AOM_TARGET_CPU x86)
-endif()
+endif ()
 
 # AV1 Codec Library doesn't recognise 'Android' as CMAKE_SYSTEM_NAME
 # We should set it to Linux instead
